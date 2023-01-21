@@ -1,5 +1,5 @@
 # phpDNS-stopper
-A small script to stop DNS queries on macOS (Prevent verifing the signature via apple servers every time when applications launched). 
+A small script to stop DNS queries on macOS (helps prevent signature verification through Apple's servers every time applications are launched).
 
 Install:
 
