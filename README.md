@@ -7,7 +7,7 @@ com.beefbad.phpDNS.plist:
 
 	<key>WorkingDirectory</key>
 	<string>/Users/apple/.phpDNS</string> <--- change path here
-  ...
+	
   
 	<key>ProgramArguments</key>
 	<array>
@@ -25,9 +25,10 @@ set your DNS in default network adapter settings to 127.0.0.1
 
 and 
 
-sudo sh install.sh
+	sudo sh install.sh
 
 Uninstall:
-sudo sh uninstall.sh
+
+	sudo sh uninstall.sh
 
 and remove DNS (127.0.0.1) from default network adapter settings
