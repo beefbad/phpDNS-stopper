@@ -7,10 +7,10 @@ echo -e -n "<?php\ndefine('BIND_IP', '127.0.0.1');\ndefine('BIND_PORT', 53);\nde
 mkdir $DIR/Logs
 chmod +w $DIR/Logs
 #Non-root users should not edit these files during both run with root rights
-sudo chown root:wheel $DIR/dnsfix.php
-sudo chown root:wheel $DIR/dnsfix.sh
-sudo chmod +x $DIR/dnsfix.php
-sudo chmod +x $DIR/dnsfix.sh
+sudo chown root:wheel $DIR/dphpDNSfix.php
+sudo chown root:wheel $DIR/phpDNSfix.sh
+sudo chmod +x $DIR/phpDNSfix.php
+sudo chmod +x $DIR/phpDNSfix.sh
 
 sudo echo -e -n "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n<dict>\n\t<key>Label</key>\n\t<string>com.beefbad.phpDNS</string>\n\t<key>KeepAlive</key>\n\t<true/>\n\t<key>RunAtLoad</key>\n\t<true/>\n\t<key>WorkingDirectory</key>\n\t<string>/$DIR</string>\n\t<key>ProgramArguments</key>\n\t<array>\n\t\t<string>$DIR/phpDNSfix.sh</string>\n\t</array>\n\t<key>ThrottleInterval</key>\n\t<integer>1</integer>\n\t<key>Nice</key>\n\t<integer>1</integer>\n\t<key>UserName</key>\n\t<string>root</string>\n\t<key>StandardErrorPath</key>\n\t<string>$DIR/Logs/phpDNSstopper.log</string>\n\t<key>StandardOutPath</key>\n\t<string>$DIR/Logs/phpDNSstopper.log</string>\n</dict>\n</plist>">/Library/LaunchDaemons/com.beefbad.phpDNS.plist
 sudo chown root:wheel /Library/LaunchDaemons/com.beefbad.phpDNS.plist
