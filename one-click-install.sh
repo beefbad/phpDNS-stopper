@@ -19,7 +19,7 @@ sudo chown root:wheel $DIR/phpDNSfix.sh
 sudo chmod +x $DIR/phpDNSfix.php
 sudo chmod +x $DIR/phpDNSfix.sh
 sudo chown root:wheel $LaunchDaemonPath
-sudo launchctl load -w /$LaunchDaemonPath
+sudo launchctl load -w $LaunchDaemonPath
 while read -r line; do
 	sname=$(echo "$line" | awk -F  "(, )|(: )|[)]" '{print $2}')
 	sdev=$(echo "$line" | awk -F  "(, )|(: )|[)]" '{print $4}')
